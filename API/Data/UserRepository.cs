@@ -86,9 +86,9 @@ namespace API.Data
                 .ToListAsync();
         }
 
-    public Task<bool> SaveAllAsync()
+    public async Task<bool> SaveAllAsync()
     {
-      throw new NotImplementedException();
+      return await _context.SaveChangesAsync() > 0;
     }
 
     public void Update(AppUser user)
